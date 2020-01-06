@@ -4,49 +4,95 @@
 }
 .Home__Header {
     display: grid;
-    grid-template-rows: .5fr 1.5fr;
+    grid-template-rows: 50px 80px;
     width: 100%;
+    z-index: 5;
 }
 .Home__Header--infobar {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100%;
-    background-color: red;
+    border-bottom: 1px solid rgba(49, 49, 49, .3);
 }
-.Home__Header--infobar-contact {
-    background-color: yellow;
+.Home__Header--infobar--contact {
+    display: flex;
+    align-items: center;
+    margin-left: 4rem;
 }
 .Home__Header--infobar-social {
-    background-color: gray;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 4rem;
+}
+.Home__Header--infobar-social i {
+    padding-right: 10px;
 }
 .Home__Header--navbar {
     display: grid;
-    grid-template-columns: 1.5fr .5fr 1fr;
+    grid-template-columns: 1.1fr .3fr 1fr;
     height: 100%;
-    background-color: blue;
+    background-color: #fff;
 }
 .Home__Header--navbar-links {
     display: flex;
-    justify-content: center;
     align-items: center;
+    text-transform: uppercase;
 
 }
+.link a {
+    padding-right: 15px;
+}
+.link a:first-child {
+    margin-left: 4rem;
+}
 .Home__Header--navbar-logo {
-    display: grid;
+    display: flex;
     align-items: center;
+
   
 }
 .Home__Header--navbar-logo img{
-    max-width: 70px;
+    max-width: 120px;
 }
 .Home__Header--navbar-icons{
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    display: grid;
+    grid-template-columns: 1fr;
+    display: flex;
     align-items: center;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    margin-right: 4.5rem;
 }
 .Home__Portada {
     width: 100%;
     background-color: gray;
+    display: grid;
+    grid-template-rows: 1fr 60px;
+    grid-template-columns: .2fr 1fr 1fr .2fr;
+    grid-template-areas: 
+    'details details image image'
+    '. bar bar .'
+    ;
+    position: relative;
+    margin-top: 30px;
+}
+.Home__Portada--details{
+background-color: orange;
+grid-area: details;
+height: calc(100% + 60px);
+}
+.Home__Portada--image {
+background-color: pink;
+height: calc(100% + 60px);
+grid-area: image;
+}
+.Home__Portada--bar {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-color: red;
+    grid-area: bar;
+    bottom: -30px;
 }
 .Home__Trending {
     width: 100%;
